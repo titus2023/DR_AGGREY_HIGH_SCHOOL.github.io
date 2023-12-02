@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            margin-top: 16px;
+        }
+
+        #countdown {
+            margin-top: 24px;
+            font-size: 24px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Coming Soon!</h1>
+
+    <p>We're working hard to bring you an amazing website.</p>
+
+    <!-- You can customize the date and time for your launch -->
+    <p id="countdown">Launching on January 1, 2024</p>
+
+    <script>
+        // Set the date we're counting down to
+        const launchDate = new Date('Jan 1, 2024 00:00:00').getTime();
+
+        // Update the countdown every 1 second
+        const countdown = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
+
+            // Calculate the time remaining
+            const timeRemaining = launchDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('countdown').innerHTML =
+                `Launching in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message
+            if (timeRemaining < 0) {
+                clearInterval(countdown);
+                document.getElementById('countdown').innerHTML = "We're Live!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
