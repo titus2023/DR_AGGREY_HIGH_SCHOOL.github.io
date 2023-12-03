@@ -535,73 +535,13 @@ text-align: left;
 .games-list div hr{
     width: 100%;
 }
-/* --------------------------- OUR TEAM---------------------- */
-.our-team{
-    background-color: #000;
-    padding: 30px 0px;
-    background: linear-gradient( #0e3959 , #03a9f5 );
-    margin: 0;
+
+@media(max-width:700px){
+    .games-list{
+        row-gap: 10px;
     }
-    .our-team h1{
-    color: #fff;
-    font-weight: 500;
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 25px;
-    position: relative;
-    }
-    .gallery{
-    width: 900px;
-    display: flex;
-    overflow-x: scroll;
-    }
-    .gallery div{
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 20px;
-    padding: 10px;
-    flex: none;
-    }
-    .gallery div img{
-    width: 100%;
-    transition: transform 0.5s;
-    }
-    .gallery div img:hover{
-    filter: brightness(50%);
-    cursor: pointer;
-    transform: scale(1.1);
-    }
-    .gallery::-webkit-scrollbar{
-    display: none;
-    }
-    .gallery-wrap{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    }
-    #backBtn, #nextBtn{
-    width: 50px;
-    cursor: pointer;
-    margin: 40px;
-    }
-    @media(max-width:700px){
-    #backBtn, #nextBtn{
-    width: 25px;
-    margin: 5px;
-    }
-    .gallery-wrap{
-    margin: 5px;
-    }
-    .gallery div{
-    grid-gap: 8px;
-    padding: 5px;
-    }
-    .gallery-wrap{
-        display: flex;
-    }
-    }
+}
+
 /*-------------------- TESTIMONIALS ---------------------- */
 
 .test-head{
@@ -766,6 +706,7 @@ grid-area: map;
 .formBox{
 position: relative;
 width: 100%;
+padding: 0px 18px;
 }
 .formBox .row50{
 display: flex;
